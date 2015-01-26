@@ -7,11 +7,13 @@ if (1 == 2) {
   document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
+
 var fileref = document.createElement('script')
 fileref.setAttribute("type", "text/javascript")
 fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
+var stop=false;
 
   function procesuj(){
     var numery = $.map($("label.radio"), function(e) {
@@ -20,7 +22,7 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
     
     if(!ciekawe(numery)){
       $("a.linkPointer > span:last").trigger("click")
-      setTimeout(procesuj,1000)
+      if(!stop) setTimeout(procesuj,1000)
     }
     
     if(window.numery===undefined){
@@ -29,8 +31,7 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
     var zbior=_.union(window.numery,numery)
     window.numery=_.uniq(zbior.sort())
     
-    
-    
+
   }
 
 
@@ -101,7 +102,7 @@ _.each(nums, function(nr) {
   if(r.length>1) { 
     if(_.contains(obsluzone,nr)) return true;
     obsluzone.push(nr)
-    alert(nr+" "+r); clearInterval(br); return false
+    alert(nr+" "+r); return false
   }
   return true;
 })
