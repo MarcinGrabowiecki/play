@@ -30,7 +30,7 @@ var numerInterval=1000;
       window.numery=numery
     }
     var nowe=_.difference(numery,window.numery);
-    if(nowe.length>0) console.log("nowe numery:"+)
+    if(nowe.length>0) console.log(new Date()+" "+nowe.length+" nowe numery:"+)
 
     var zbior=_.union(window.numery,numery)
     window.numery=_.uniq(zbior.sort())
