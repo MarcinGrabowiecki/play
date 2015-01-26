@@ -56,7 +56,7 @@ function duzoPowtorzen(nr){
 }
 
 
-var filtry=[maloCyfr,sekwencja,duzoPowtorzen,duzoPowtorzen2];
+var filtry=[maloCyfr,sekwencja,duzoPowtorzen];
 
 filtry.push(
   function (nr){
