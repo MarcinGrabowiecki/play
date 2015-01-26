@@ -42,7 +42,8 @@ var numerInterval=1000;
   }
 
 $(document).bind('DOMSubtreeModified', function() {
-	if(!numerStop) procesuj()
+//	if(!numerStop) procesuj()
+	console.log(this)
 })
 
 
