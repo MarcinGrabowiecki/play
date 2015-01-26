@@ -17,6 +17,7 @@ var numerStop=false;
 var numerInterval=1000;
 
   function procesuj(){
+    
     var numery = $.map($("label.radio"), function(e) {
       return $(e).attr("for").substring(2)
     })
@@ -29,6 +30,7 @@ var numerInterval=1000;
     if(window.numery===undefined){
       window.numery=numery
     }
+
     var nowe=_.difference(numery,window.numery);
     if(nowe.length>0) console.log(new Date()+" : "+nowe.length+" nowe numery:"+nowe)
 
