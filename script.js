@@ -13,7 +13,8 @@ fileref.setAttribute("type", "text/javascript")
 fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
-var stop=false;
+var numerStop=false;
+var numerInterval=1000;
 
   function procesuj(){
     var numery = $.map($("label.radio"), function(e) {
@@ -22,7 +23,7 @@ var stop=false;
     
     if(!ciekawe(numery)){
       $("a.linkPointer > span:last").trigger("click")
-      if(!stop) setTimeout(procesuj,1000)
+      if(!numerStop) setTimeout(procesuj,numerInterval)
     }
     
     if(window.numery===undefined){
@@ -33,7 +34,6 @@ var stop=false;
     
 
   }
-
 
 
 function maloCyfr(n){
