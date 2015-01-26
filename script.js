@@ -17,7 +17,6 @@ var numerStop=false;
 var numerInterval=1000;
 
 
-
   function procesuj(){
     
     var numery = $.map($("label.radio"), function(e) {
@@ -41,8 +40,8 @@ var numerInterval=1000;
 
   }
 
-$(document).bind('DOMSubtreeModified', function() {
-//	if(!numerStop) procesuj()
+$("#otherNumber0").bind('DOMSubtreeModified', function() {
+	if(!numerStop) procesuj()
 	console.log(this)
 })
 
