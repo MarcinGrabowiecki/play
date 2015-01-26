@@ -29,7 +29,8 @@ var numerInterval=1000;
     if(window.numery===undefined){
       window.numery=numery
     }
-    console.log("nowe numery:"+_.difference(numery,window.numery))
+    var nowe=_.difference(numery,window.numery);
+    if(nowe.length>0) console.log("nowe numery:"+)
 
     var zbior=_.union(window.numery,numery)
     window.numery=_.uniq(zbior.sort())
