@@ -98,3 +98,4 @@ _.each(nums, function(nr) {
 }
 
 //ciekawe()
+procesuj()
