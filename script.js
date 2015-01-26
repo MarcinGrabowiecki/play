@@ -16,6 +16,8 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 var numerStop=false;
 var numerInterval=1000;
 
+
+
   function procesuj(){
     
     var numery = $.map($("label.radio"), function(e) {
@@ -24,7 +26,7 @@ var numerInterval=1000;
     
     if(!ciekawe(numery)){
       $("a.linkPointer > span:last").trigger("click")
-      if(!numerStop) setTimeout(procesuj,numerInterval)
+      //if(!numerStop) setTimeout(procesuj,numerInterval)
     }
     
     if(window.numery===undefined){
@@ -35,10 +37,13 @@ var numerInterval=1000;
     if(nowe.length>0) console.log(new Date()+" : "+nowe.length+" nowe numery:"+nowe)
 
     var zbior=_.union(window.numery,numery)
-    window.numery=_.uniq(zbior.sort())
-    
+    window.numery=_.uniq(zbior.sort())    
 
   }
+
+$(document).bind('DOMSubtreeModified', function() {
+	if(!numerStop) procesuj()
+})
 
 
 function maloCyfr(n){
