@@ -76,7 +76,8 @@ filtry.push(
   }
 )
 
-filtry.push(function(){
+filtry.push(
+  function(nr){
   if(/12345/.test(nr)) return " Rosnacy"
   if(/23456/.test(nr)) return " Rosnacy"
   if(/34567/.test(nr)) return " Rosnacy"
@@ -84,7 +85,8 @@ filtry.push(function(){
   if(/56789/.test(nr)) return " Rosnacy"
   if(/67890/.test(nr)) return " Rosnacy"
   return ""
-})
+}
+)
 
 var obsluzone=[]
 
