@@ -46,7 +46,7 @@ $("#otherNumber0").bind('DOMSubtreeModified', function() {
     return;
   }
 	//if(!numerStop) procesuj()
-	console.log(this)
+	procesuj();
 })
 
 
