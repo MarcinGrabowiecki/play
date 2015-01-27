@@ -37,7 +37,7 @@ var everySecond = 0;
 var numerStop=false;
 
 $("#otherNumber0").bind('DOMSubtreeModified', function() {
-	if(!numerStop&&everySecond++%2) setTimeount(procesuj,200);
+	if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
 })
 
 
