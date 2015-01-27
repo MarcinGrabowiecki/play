@@ -30,14 +30,16 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
     var nowe=_.difference(numery,window.numery);
     if(nowe.length>0) console.log(new Date()+" : "+nowe.length+" nowe numery:"+nowe)
     var zbior=_.union(window.numery,numery)
-    window.numery=_.uniq(zbior.sort())    
+    window.numery=_.uniq(zbior.sort())
+
+    setTimeout(procesuj, 2000)
   }
 
 var everySecond = 0;
 var numerStop=false;
 
 $("#otherNumber0").bind('DOMSubtreeModified', function() {
-	if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
+	//if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
 })
 
 
