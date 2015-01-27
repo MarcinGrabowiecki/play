@@ -17,8 +17,7 @@ var numerStop=false;
 var numerInterval=1000;
 
 
-  function procesuj(){
-    
+  function procesuj(){    
     var numery = $.map($("label.radio"), function(e) {
       return $(e).attr("for").substring(2)
     })
@@ -34,14 +33,12 @@ var numerInterval=1000;
 
     var nowe=_.difference(numery,window.numery);
     if(nowe.length>0) console.log(new Date()+" : "+nowe.length+" nowe numery:"+nowe)
-
     var zbior=_.union(window.numery,numery)
     window.numery=_.uniq(zbior.sort())    
-
   }
 
 $("#otherNumber0").bind('DOMSubtreeModified', function() {
-	if(!numerStop) procesuj()
+	//if(!numerStop) procesuj()
 	console.log(this)
 })
 
