@@ -45,8 +45,7 @@ $("#otherNumber0").bind('DOMSubtreeModified', function() {
     everySecond=0;
     return;
   }
-	//if(!numerStop) procesuj()
-	procesuj();
+	if(!numerStop) procesuj()
 })
 
 
