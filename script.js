@@ -13,7 +13,6 @@ fileref.setAttribute("type", "text/javascript")
 fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
-
   function procesuj(){    
     var numery = $.map($("label.radio"), function(e) {
       return $(e).attr("for").substring(2)
