@@ -37,7 +37,14 @@ var numerInterval=1000;
     window.numery=_.uniq(zbior.sort())    
   }
 
+var everySecond = 0;
+
 $("#otherNumber0").bind('DOMSubtreeModified', function() {
+  everySecond++
+  if(everySecond==2){
+    everySecond=0;
+    return;
+  }
 	//if(!numerStop) procesuj()
 	console.log(this)
 })
