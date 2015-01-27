@@ -38,9 +38,9 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 var everySecond = 0;
 var numerStop=false;
 
-$("#otherNumber0").bind('DOMSubtreeModified', function() {
+//$("#otherNumber0").bind('DOMSubtreeModified', function() {
 	//if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
-})
+//})
 
 
 function maloCyfr(n){
