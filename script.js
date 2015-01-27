@@ -52,7 +52,7 @@ function sekwencja(nr){
   return ""
 }
 
-var filtry=[maloCyfr,sekwencja,duzoPowtorzen];
+var filtry=[maloCyfr,sekwencja];
 
 filtry.push(function(nr){
   for(i=0; i<nr.length-2;i++){
