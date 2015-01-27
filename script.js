@@ -38,7 +38,7 @@ var everySecond = 0;
 var numerStop=false;
 
 $("#otherNumber0").bind('DOMSubtreeModified', function() {
-	if(!numerStop&&everySecond++%2) procesuj()
+	if(!numerStop&&everySecond++%2) setTimeount(procesuj,200);
 })
 
 
@@ -52,17 +52,18 @@ function sekwencja(nr){
   return ""
 }
 
-function duzoPowtorzen(nr){
+var filtry=[maloCyfr,sekwencja,duzoPowtorzen];
+
+filtry.push(function(nr){
   for(i=0; i<nr.length-2;i++){
     var p=nr.substring(i,i+2)
     var reg=new RegExp(p+".*"+p+".*"+p)
     if(reg.test(nr)) return " 3Powtórzenia"
   }
   return ""
-}
+})
 
 
-var filtry=[maloCyfr,sekwencja,duzoPowtorzen];
 
 filtry.push(
   function (nr){
