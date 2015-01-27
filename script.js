@@ -13,9 +13,6 @@ fileref.setAttribute("type", "text/javascript")
 fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
-var numerStop=false;
-var numerInterval=1000;
-
 
   function procesuj(){    
     var numery = $.map($("label.radio"), function(e) {
@@ -38,14 +35,10 @@ var numerInterval=1000;
   }
 
 var everySecond = 0;
+var numerStop=false;
 
 $("#otherNumber0").bind('DOMSubtreeModified', function() {
-  everySecond++
-  if(everySecond==2){
-    everySecond=0;
-    return;
-  }
-	if(!numerStop) procesuj()
+	if(!numerStop&&everySecond++%2) procesuj()
 })
 
 
