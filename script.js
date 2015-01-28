@@ -100,7 +100,6 @@ filtry.push(function(nr){
 
 
 
-
 function printNumery(){
   //_.each(numery,function(n){console.log(n)});
   console.log(_.reduce(numery,function(a,b){return a+"\n"+b}))
@@ -115,12 +114,12 @@ _.each(nums, function(nr) {
     r+=it(nr)
   })
   if(r.length>1) { 
-    if(_.contains(obsluzoneNumery,nr)) return true;
+    if(_.contains(obsluzoneNumery,nr)) return false;
     obsluzoneNumery.push(nr)
-    alert(nr+" "+r); return false
+    alert(nr+" "+r); return true
   }
 })
-return true;
+return false;
 }
 
 procesuj()
