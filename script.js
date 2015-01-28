@@ -21,7 +21,7 @@ var numerStop=false;
       return $(e).attr("for").substring(2)
     })
     
-    if(!ciekawe(numery)&&!numerStop){
+    if(!numerStop&&!ciekawe(numery)){
       $("a.linkPointer > span:last").trigger("click")
       setTimeout(procesuj,numerInterval)
     }
@@ -123,7 +123,7 @@ _.each(nums, function(nr) {
   })
   if(r.length>1) { 
     if(_.contains(obsluzoneNumery,nr)) return true;
-    obsluzone.push(nr)
+    obsluzoneNumery.push(nr)
     alert(nr+" "+r); return false
   }
   return true;
