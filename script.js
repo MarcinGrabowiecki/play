@@ -8,7 +8,7 @@ if (1 == 2) {
 }
 
 if(window.numery===undefined){
-    window.numery=numery
+    window.numery=[]
 }
 
 
@@ -28,17 +28,19 @@ var numerStop=false;
     var isCiekawy=ciekawe(numery);
     console.log(isCiekawy)
 
+
+    var nowe=_.difference(numery,window.numery);
+    if(nowe.length>0) console.log(new Date().toUTCString()+": "+nowe.length+" nowe numery:"+nowe)
+    var zbior=_.union(window.numery,numery)
+  
+    window.numery=_.uniq(zbior.sort())
+
+
     if(!numerStop&&!isCiekawy){
       $("a.linkPointer > span:last").trigger("click")
       setTimeout(procesuj,numerInterval)
     }
     
-
-    var nowe=_.difference(numery,window.numery);
-    if(nowe.length>0) console.log(new Date().toUTCString()+": "+nowe.length+" nowe numery:"+nowe)
-    var zbior=_.union(window.numery,numery)
-    window.numery=_.uniq(zbior.sort())
-
   }
 
 //var everySecond = 0;
