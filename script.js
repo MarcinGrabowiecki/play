@@ -1,12 +1,3 @@
-// Code goes here
-
-if (1 == 2) {
-  var fileref = document.createElement('script')
-  fileref.setAttribute("type", "text/javascript")
-  fileref.setAttribute("src", "https://rawgit.com/MarcinGrabowiecki/play/master/script.js")
-  document.getElementsByTagName("head")[0].appendChild(fileref)
-}
-
 if(window.numery===undefined){
     window.numery=[]
 }
