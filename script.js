@@ -7,6 +7,10 @@ if (1 == 2) {
   document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
+if(window.numery===undefined){
+    window.numery=numery
+}
+
 
 var fileref = document.createElement('script')
 fileref.setAttribute("type", "text/javascript")
@@ -21,14 +25,14 @@ var numerStop=false;
       return $(e).attr("for").substring(2)
     })
     
-    if(!numerStop&&!ciekawe(numery)){
+    var isCiekawy=ciekawe(numery);
+    console.log(isCiekawy)
+
+    if(!numerStop&&!isCiekawy){
       $("a.linkPointer > span:last").trigger("click")
       setTimeout(procesuj,numerInterval)
     }
     
-    if(window.numery===undefined){
-      window.numery=numery
-    }
 
     var nowe=_.difference(numery,window.numery);
     if(nowe.length>0) console.log(new Date().toUTCString()+": "+nowe.length+" nowe numery:"+nowe)
