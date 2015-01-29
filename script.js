@@ -94,6 +94,11 @@ function enumerator() {
         }))
     }
 
+
+    enumerator.xxx=function(){
+    	alert("xxx");
+    }
+
     var obsluzoneNumery = []
 
     function ciekawe(nums) {
