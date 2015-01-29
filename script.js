@@ -101,7 +101,7 @@ function ciekawe(nums){
 _.each(nums, function(nr) {
   var r="";
   _.each(filtry,function(it){
-    if(!it(nr)===undefined) r+=it(nr)
+    if(it(nr)) r+=it(nr)
   })
   if(r.length>1) {
     if(_.contains(obsluzoneNumery,nr)) return false;
