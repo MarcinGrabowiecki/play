@@ -101,7 +101,6 @@ function ciekawe(nums){
 _.each(nums, function(nr) {
   var r="";
   _.each(filtry,function(it){
-  	cons
     if(!it(nr)===undefined) r+=it(nr)
   })
   if(r.length>1) {
