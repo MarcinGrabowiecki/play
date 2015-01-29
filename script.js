@@ -1,3 +1,9 @@
+var fileref = document.createElement('script')
+fileref.setAttribute("type", "text/javascript")
+fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
+document.getElementsByTagName("head")[0].appendChild(fileref)
+
+
 function enumerator() {
 
     var interval = 1000
@@ -11,6 +17,7 @@ function enumerator() {
         })
 
         var isCiekawy = ciekawe(nums);
+        console.log(isCiekawy)
 
         var nowe = _.difference(nums, numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
@@ -92,30 +99,27 @@ function enumerator() {
     var obsluzoneNumery = []
 
     function ciekawe(nums) {
+    	var r = "";
         _.each(nums, function(nr) {
-            var r = "";
             _.each(filtry, function(it) {
-                if (it(nr)) r += it(nr)
+                if (!_.contains(obsluzoneNumery, nr)&&it(nr)) {
+                	r += (nr+" "+it(nr)+"\n")
+                	obsluzoneNumery.push(nr);
+                }
             })
-            if (r.length > 1) {
-                if (_.contains(obsluzoneNumery, nr)) return false;
-                obsluzoneNumery.push(nr);
-                alert(nr + " " + r);
-                return true;
-            }
         })
+
+        if (r.length > 1) {
+            alert(r);
+            return true;
+        }
+
         return false;
     }
     setTimeout(procesuj, 2000)
-        //ciekawe()
-    funkcja = this;
 }
 
 
-var fileref = document.createElement('script')
-fileref.setAttribute("type", "text/javascript")
-fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
-document.getElementsByTagName("head")[0].appendChild(fileref)
 
 var tescik = false
 enumerator()
