@@ -6,11 +6,9 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 function enumerator() {
 
-	enumerator.bla="bli";
-
-    var interval = 1000
-    var process = true;
-    var numery = [];
+    enumerator.interval = 1000
+    enumerator.process = true;
+    enumerator.numery = [];
 
     function procesuj() {
 
@@ -18,13 +16,13 @@ function enumerator() {
             return $(e).attr("for").substring(2)
         })
 
-        var nowe = _.difference(nums, numery);
+        var nowe = _.difference(nums, enumerator.numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
-        numery = _.uniq(_.union(numery, nums)).sort()
+        enumerator.numery = _.uniq(_.union(enumerator.numery, nums)).sort()
 
-        if (process && !ciekawe(nums)) {
+        if (enumerator.process && !ciekawe(nums)) {
             $("a.linkPointer > span:last").trigger("click")
-            setTimeout(procesuj, interval)
+            setTimeout(procesuj, enumerator.interval)
         }
 
     }
@@ -87,17 +85,13 @@ function enumerator() {
         if (tescik == true) return " !!! break !!! "
     })
 
-    function printNumery() {
+    enumerator.printNumery =function() {
         //_.each(numery,function(n){console.log(n)});
-        console.log(_.reduce(numery, function(a, b) {
+        console.log(_.reduce(enumerator.numery, function(a, b) {
             return a + "\n" + b
         }))
     }
 
-
-    enumerator.xxx=function(){
-    	alert("xxx");
-    }
 
     var obsluzoneNumery = []
 
