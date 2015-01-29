@@ -10,7 +10,7 @@ function enumerator() {
     enumerator.process = true;
     enumerator.numery = [];
 
-    function procesuj() {
+    enumerator.procesuj = function () {
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
@@ -22,7 +22,7 @@ function enumerator() {
 
         if (enumerator.process && !ciekawe(nums)) {
             $("a.linkPointer > span:last").trigger("click")
-            setTimeout(procesuj, enumerator.interval)
+            setTimeout(enumerator.procesuj, enumerator.interval)
         }
 
     }
@@ -96,6 +96,8 @@ function enumerator() {
     var obsluzoneNumery = []
 
     function ciekawe(nums) {
+
+
     	var r = "";
         _.each(nums, function(nr) {
             _.each(filtry, function(it) {
@@ -113,7 +115,7 @@ function enumerator() {
 
         return false;
     }
-    setTimeout(procesuj, 2000)
+    setTimeout(enumerator.procesuj, 2000)
 }
 
 
