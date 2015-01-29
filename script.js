@@ -1,11 +1,5 @@
 function enumerator(){
 
-
-var fileref = document.createElement('script')
-fileref.setAttribute("type", "text/javascript")
-fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
-document.getElementsByTagName("head")[0].appendChild(fileref)
-
 var interval=1000
 var process=true;
 var numery=[];
@@ -20,7 +14,7 @@ var numery=[];
 
     var nowe=_.difference(nums,numery);
     if(nowe.length>0) console.log(new Date().toUTCString()+":1: "+nowe.length+" nowe numery:"+nowe)
-    numery=_uniq(_.union(numery,numes)).sort()
+    numery=_.uniq(_.union(numery,numes)).sort()
  
 
     if(process&&!isCiekawy){
@@ -132,4 +126,11 @@ setTimeout(procesuj,2000)
 }
 
 
+var fileref = document.createElement('script')
+fileref.setAttribute("type", "text/javascript")
+fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
+document.getElementsByTagName("head")[0].appendChild(fileref)
+
+
 enumerator()
+
