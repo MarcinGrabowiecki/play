@@ -55,7 +55,6 @@ filtry.push(function(nr){
     var reg=new RegExp(p+".*"+p+".*"+p)
     if(reg.test(nr)) return " 3Powtórzenia"
   }
-  return ""
 })
 
 
@@ -65,7 +64,6 @@ filtry.push(
     var s=""+i+""+i+""+i+""+i
     if(nr.indexOf(s)>-1) return " potrójne "+s
   }
-  return ""
   }
 )
 
@@ -77,7 +75,6 @@ filtry.push(
   if(/45678/.test(nr)) return " Rosnacy"
   if(/56789/.test(nr)) return " Rosnacy"
   if(/67890/.test(nr)) return " Rosnacy"
-  return ""
 }
 )
 
@@ -88,16 +85,16 @@ filtry.push(function(nr){
     var reg=new RegExp(p+".*"+p+".*"+p)
     if(reg.test(nr)) return " trzy powtórzenia dwójek"
   }
-  return ""
 })
 
 
 filtry.push(function(nr){
   if(nr==window.szukanyNr) return " szukanyNr"
-    return ""
 })
 
-
+filtry.push(function(nr){
+  if(tescik==true) return " !!! break !!! "
+})
 
 function printNumery(){
   //_.each(numery,function(n){console.log(n)});
