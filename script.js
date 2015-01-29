@@ -37,17 +37,17 @@ var numerStop=false;
 //})
 
 
-function maloCyfr(n){
+var filtry=[
+function(n){
   if(_.uniq(n.split('')).length<5) return " maloCyferek"
-  return ""
 }
-
-function sekwencja(nr){
+,
+function(nr){
   if(_.uniq([nr.substring(0, 3), nr.substring(3, 6), nr.substring(6)]).length<3) return " sekwencja"
   return ""
 }
+]
 
-var filtry=[maloCyfr,sekwencja];
 
 filtry.push(function(nr){
   for(i=0; i<nr.length-2;i++){
@@ -111,7 +111,7 @@ function ciekawe(nums){
 _.each(nums, function(nr) {
   var r="";
   _.each(filtry,function(it){
-    r+=it(nr)
+    if(!it===undefined) r+=it(nr)
   })
   if(r.length>1) { 
     if(_.contains(obsluzoneNumery,nr)) return false;
