@@ -4,7 +4,11 @@ var interval=1000
 var process=true;
 var numery=[];
 
-  function procesuj(){    
+this.iii="aaaaaaa"
+
+  function procesuj(){
+  	console.log(this.iii)
+  	console.log(iii)
     var nums = $.map($("label.radio"), function(e) {
       return $(e).attr("for").substring(2)
     })
