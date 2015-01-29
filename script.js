@@ -6,6 +6,8 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 function enumerator() {
 
+	enumerator.bla="bli";
+
     var interval = 1000
     var process = true;
     var numery = [];
@@ -16,14 +18,11 @@ function enumerator() {
             return $(e).attr("for").substring(2)
         })
 
-        var isCiekawy = ciekawe(nums);
-        console.log(isCiekawy)
-
         var nowe = _.difference(nums, numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
         numery = _.uniq(_.union(numery, nums)).sort()
 
-        if (process && !isCiekawy) {
+        if (process && !ciekawe(nums)) {
             $("a.linkPointer > span:last").trigger("click")
             setTimeout(procesuj, interval)
         }
@@ -34,7 +33,6 @@ function enumerator() {
     //$("#otherNumber0").bind('DOMSubtreeModified', function() {
     //if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
     //})
-
 
     var filtry = [
         function(n) {
