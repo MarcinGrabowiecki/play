@@ -5,6 +5,7 @@ var process=true;
 var numery=[];
 
 this.iii="aaaaaaa"
+iiii="aaaaaaa"
 
   function procesuj(){
   	console.log(this.iii)
@@ -18,7 +19,7 @@ this.iii="aaaaaaa"
 
     var nowe=_.difference(nums,numery);
     if(nowe.length>0) console.log(new Date().toUTCString()+":1: "+nowe.length+" nowe numery:"+nowe)
-    numery=_.uniq(_.union(numery,numes)).sort()
+    numery=_.uniq(_.union(numery,nums)).sort()
  
 
     if(process&&!isCiekawy){
