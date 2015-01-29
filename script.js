@@ -115,14 +115,15 @@ _.each(nums, function(nr) {
   })
   if(r.length>1) { 
     if(_.contains(obsluzoneNumery,nr)) return false;
-    obsluzoneNumery.push(nr)
-    alert(nr+" "+r); return true
+    obsluzoneNumery.push(nr);
+    alert(nr+" "+r);
+    return true;
   }
 })
 return false;
 }
 
-procesuj()
+setTimeout(procesuj,2000)
 
 //ciekawe()
 
