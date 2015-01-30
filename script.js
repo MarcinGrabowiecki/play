@@ -6,7 +6,10 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 function enumerator() {
 
-    enumerator.interval = 1000
+	this.pupa="11111111111";
+	var this.pupa2="111111111112";
+
+    enumerator.interval = 1000;
     enumerator.process = true;
     enumerator.numery = [];
 
@@ -96,7 +99,6 @@ function enumerator() {
     var obsluzoneNumery = []
 
     function ciekawe(nums) {
-
 
     	var r = "";
         _.each(nums, function(nr) {
