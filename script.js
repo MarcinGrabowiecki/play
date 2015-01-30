@@ -58,7 +58,7 @@ function enumerator() {
         function(nr) {
             for (i = 0; i < 10; i++) {
                 var s = "" + i + "" + i + "" + i + "" + i
-                if (nr.substring(0, 3) > -1||nr.substring(3, 6) > -1||nr.substring(6) > -1) return " potrójne " + s
+                if (nr.substring(0, 3).indexOf(s) > -1||nr.substring(3, 6).indexOf(s) > -1||nr.substring(6).indexOf(s) > -1) return " potrójne " + s
             }
         },
         function(nr) {
