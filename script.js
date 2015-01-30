@@ -12,7 +12,7 @@ function enumerator() {
     enumerator.process = true;
     enumerator.numery = [];
 
-    enumerator.procesuj = function () {
+    enumerator.procesuj = function (){
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
@@ -51,7 +51,7 @@ function enumerator() {
         },
         function(nr) {
             for (i = 0; i < 10; i++) {
-                var s = "" + i + "" + i + "" + i 
+                var s = "" + i + i + i + i 
                 if (nr.indexOf(s) > -1) return " poczwórne " + s
             }
         },
@@ -126,6 +126,9 @@ function enumerator() {
     }
 
     setTimeout(enumerator.procesuj, 2000)
+
+
+
 }
 
 
