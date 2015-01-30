@@ -55,20 +55,18 @@ function enumerator() {
                 var s = "" + i + "" + i + "" + i + "" + i
                 if (nr.indexOf(s) > -1) return " potrójne " + s
             }
+        },
+        function(nr) {
+            var s="01234567890"
+            var t="09876543210"
+            for(i=0; i<7; i++){
+                var reg1 = new RegExp(".*" + s.substring(i,i+5) + ".*");
+                var reg2 = new RegExp(".*" + t.substring(i,i+5) + ".*");
+                if(reg1.test(nr)) return " "+reg1+" "
+                if(reg2.test(nr)) return " "+reg2+" "
+            }
         }
     ]
-
-
-    filtry.push(
-        function(nr) {
-            if (/12345/.test(nr)) return " Rosnacy"
-            if (/23456/.test(nr)) return " Rosnacy"
-            if (/34567/.test(nr)) return " Rosnacy"
-            if (/45678/.test(nr)) return " Rosnacy"
-            if (/56789/.test(nr)) return " Rosnacy"
-            if (/67890/.test(nr)) return " Rosnacy"
-        }
-    )
 
 
     filtry.push(function(nr) {
@@ -117,6 +115,11 @@ function enumerator() {
 
         return false;
     }
+
+    this.dupa=function(){
+    	alert("dupa");
+    }
+
     setTimeout(enumerator.procesuj, 2000)
 }
 
