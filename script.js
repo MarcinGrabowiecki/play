@@ -18,7 +18,7 @@ function enumerator() {
 
         var nowe = _.difference(nums, enumerator.numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
-        enumerator.numery = _.uniq(_.union(enumerator.numery, nums)).sort()
+        enumerator.numery = _.uniq(enumerator.numery.concat(nums)).sort()
 
         if (enumerator.process && !ciekawe(nums)) {
             $("a.linkPointer > span:last").trigger("click")
