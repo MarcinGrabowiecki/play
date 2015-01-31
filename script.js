@@ -21,7 +21,7 @@ function enumerator() {
         enumerator.numery = _.uniq(enumerator.numery.concat(nums)).sort()
 
         if (enumerator.process && !ciekawe(nums)) {
-            $("a.linkPointer > span:last").trigger("click")
+            $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
             setTimeout(enumerator.procesuj, enumerator.interval)
         }
 
