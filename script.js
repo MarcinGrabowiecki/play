@@ -75,16 +75,17 @@ function enumerator() {
             var reg = new RegExp(p + ".*" + p + ".*" + p)
             if (reg.test(nr)) return " trzy powtórzenia dwójek"
           }
+        },
+        function(nr) {
+       		if(nr.split("").sort().join("").indexOf("00000")==0) return "zawiera cztery zera";
         }
     ]
-
-
 
     filtry.push(function(nr) {
         if (nr == window.szukanyNr) return " szukanyNr"
     })
 
-    enumerator.printNumery =function() {
+    enumerator.printNr = function() {
         //_.each(numery,function(n){console.log(n)});
         console.log(_.reduce(enumerator.numery, function(a, b) {
             return a + "\n" + b
