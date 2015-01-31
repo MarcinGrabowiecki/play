@@ -6,8 +6,6 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 function enumerator() {
 
-	this.pupa="11111111111";
-
     enumerator.interval = 1000;
     enumerator.process = true;
     enumerator.numery = [];
@@ -70,25 +68,20 @@ function enumerator() {
                 if(reg1.test(nr)) return " "+reg1+" "
                 if(reg2.test(nr)) return " "+reg2+" "
             }
-        }
-    ]
-
-
-    filtry.push(function(nr) {
+        },
+        function(nr) {
         for (i = 0; i < nr.length - 3; i++) {
             var p = nr.substring(i, i + 3)
             var reg = new RegExp(p + ".*" + p + ".*" + p)
             if (reg.test(nr)) return " trzy powtórzenia dwójek"
+          }
         }
-    })
+    ]
+
 
 
     filtry.push(function(nr) {
         if (nr == window.szukanyNr) return " szukanyNr"
-    })
-
-    filtry.push(function(nr) {
-        if (tescik == true) return " !!! break !!! "
     })
 
     enumerator.printNumery =function() {
@@ -127,11 +120,6 @@ function enumerator() {
 
     setTimeout(enumerator.procesuj, 2000)
 
-
-
 }
 
-
-
-var tescik = false
 enumerator()
