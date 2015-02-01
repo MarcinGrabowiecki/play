@@ -21,7 +21,7 @@ function enNr() {
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
         enNr.numery = _.uniq(enNr.numery.concat(nums)).sort()
 
-        if (enNr.stop && !ciekawe(nums)) {
+        if (!enNr.stop && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
             setTimeout(enNr.run, enNr.interval)
         }
