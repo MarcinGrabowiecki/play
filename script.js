@@ -7,8 +7,9 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 function enNr() {
 
     enNr.interval = 1000;
-    enNr.process = true;
+    enNr.stop = false;
     enNr.numery = [];
+    this.szukanyNr=":)"
 
     enNr.run = function (){
 
@@ -20,7 +21,7 @@ function enNr() {
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
         enNr.numery = _.uniq(enNr.numery.concat(nums)).sort()
 
-        if (enNr.process && !ciekawe(nums)) {
+        if (enNr.stop && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
             setTimeout(enNr.run, enNr.interval)
         }
@@ -111,10 +112,6 @@ function enNr() {
         }
 
         return false;
-    }
-
-    this.dupa=function(){
-    	alert("dupa");
     }
 
     setTimeout(enNr.run, 2000)
