@@ -82,7 +82,7 @@ function enumerator() {
     ]
 
     filtry.push(function(nr) {
-        if (nr == window.szukanyNr) return " szukanyNr "+nr
+        if (RegExp(window.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
 
     enumerator.printNr = function() {
