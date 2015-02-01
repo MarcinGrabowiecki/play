@@ -77,19 +77,17 @@ function enumerator() {
           }
         },
         function(nr) {
-       		if(nr.split("").sort().join("").indexOf("00000")==0) return "zawiera cztery zera";
+       		if(nr.split("").sort().join("").indexOf("00000")==0) return "zawiera w sumie cztery zera";
         }
     ]
 
     filtry.push(function(nr) {
-        if (nr == window.szukanyNr) return " szukanyNr"
+        if (nr == window.szukanyNr) return " szukanyNr "+nr
     })
 
     enumerator.printNr = function() {
         //_.each(numery,function(n){console.log(n)});
-        console.log(_.reduce(enumerator.numery, function(a, b) {
-            return a + "\n" + b
-        }))
+        console.log(enumerator.numery.join("\n"));
     }
 
 
