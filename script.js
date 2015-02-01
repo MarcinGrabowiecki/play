@@ -9,7 +9,7 @@ function enNr() {
     enNr.interval = 1000;
     enNr.stop = false;
     enNr.numery = [];
-    this.szukanyNr=":)"
+    this.szukanyNr="aaaaaaaaa"
 
     enNr.run = function (){
 
