@@ -4,25 +4,25 @@ fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
 
-function enumerator() {
+function enNr() {
 
-    enumerator.interval = 1000;
-    enumerator.process = true;
-    enumerator.numery = [];
+    enNr.interval = 1000;
+    enNr.process = true;
+    enNr.numery = [];
 
-    enumerator.procesuj = function (){
+    enNr.run = function (){
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
         })
 
-        var nowe = _.difference(nums, enumerator.numery);
+        var nowe = _.difference(nums, enNr.numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
-        enumerator.numery = _.uniq(enumerator.numery.concat(nums)).sort()
+        enNr.numery = _.uniq(enNr.numery.concat(nums)).sort()
 
-        if (enumerator.process && !ciekawe(nums)) {
+        if (enNr.process && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
-            setTimeout(enumerator.procesuj, enumerator.interval)
+            setTimeout(enNr.run, enNr.interval)
         }
 
     }
@@ -85,9 +85,9 @@ function enumerator() {
         if (RegExp(window.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
 
-    enumerator.printNr = function() {
+    enNr.printNr = function() {
         //_.each(numery,function(n){console.log(n)});
-        console.log(enumerator.numery.join("\n"));
+        console.log(enNr.numery.join("\n"));
     }
 
 
@@ -117,8 +117,8 @@ function enumerator() {
     	alert("dupa");
     }
 
-    setTimeout(enumerator.procesuj, 2000)
+    setTimeout(enNr.run, 2000)
 
 }
 
-enumerator()
+enNr()
