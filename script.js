@@ -4,7 +4,9 @@ fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
 
-function enNr() {
+eee = new function enNr() {
+
+	console.log("wykonanie")
 
     this.interval = 1000;
     this.stop = false;
@@ -83,7 +85,10 @@ function enNr() {
     ]
 
     filtry.push(function(nr) {
-        if (RegExp(window.szukanyNr).test(nr)) return " szukanyNr "+nr
+    	console.log(this.szukanyNr)
+    	console.log(szukanyNr)
+
+        if (RegExp(this.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
 
     this.printNr = function() {
@@ -118,4 +123,4 @@ function enNr() {
 
 }
 
-new enNr()
+eee.run()
