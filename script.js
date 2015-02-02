@@ -6,9 +6,9 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 function enNr() {
 
-    enNr.interval = 1000;
-    enNr.stop = false;
-    enNr.numery = [];
+    this.interval = 1000;
+    this.stop = false;
+    this.numery = [];
     this.szukanyNr="aaaaaaaaa"
 
     enNr.run = function (){
@@ -86,7 +86,7 @@ function enNr() {
         if (RegExp(window.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
 
-    enNr.printNr = function() {
+    this.printNr = function() {
         //_.each(numery,function(n){console.log(n)});
         console.log(enNr.numery.join("\n"));
     }
