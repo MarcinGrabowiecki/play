@@ -11,19 +11,19 @@ function enNr() {
     this.numery = [];
     this.szukanyNr="aaaaaaaaa"
 
-    enNr.run = function (){
+    this.run = function (){
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
         })
 
-        var nowe = _.difference(nums, enNr.numery);
+        var nowe = _.difference(nums, this.numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
-        enNr.numery = _.uniq(enNr.numery.concat(nums)).sort()
+        this.numery = _.uniq(this.numery.concat(nums)).sort()
 
-        if (!enNr.stop && !ciekawe(nums)) {
+        if (!this.stop && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
-            setTimeout(enNr.run, enNr.interval)
+            setTimeout(this.run, this.interval)
         }
 
     }
@@ -88,7 +88,7 @@ function enNr() {
 
     this.printNr = function() {
         //_.each(numery,function(n){console.log(n)});
-        console.log(enNr.numery.join("\n"));
+        console.log(this.numery.join("\n"));
     }
 
 
