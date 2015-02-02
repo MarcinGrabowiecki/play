@@ -4,7 +4,7 @@ fileref.setAttribute("src", "http://underscorejs.org/underscore-min.js")
 document.getElementsByTagName("head")[0].appendChild(fileref)
 
 
-eee = new function enNr() {
+enr = new function() {
 
 	console.log("wykonanie")
 
@@ -118,8 +118,7 @@ eee = new function enNr() {
         return false;
     }
 
-    setTimeout(enNr.run, 2000)
+    setTimeout(this.run, 2000)
 
 }
 
-eee.run()
