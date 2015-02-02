@@ -86,7 +86,6 @@ eee = new function enNr() {
 
     filtry.push(function(nr) {
     	console.log(this.szukanyNr)
-    	console.log(szukanyNr)
 
         if (RegExp(this.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
