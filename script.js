@@ -98,7 +98,7 @@ enr = new function() {
 
     var obsluzoneNumery = []
 
-    var function ciekawe(nums) {
+    function ciekawe(nums) {
 
     	var r = "";
         _.each(nums, function(nr) {
