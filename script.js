@@ -35,7 +35,7 @@ enr = new function() {
     //if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
     //})
 
-    var filtry = [
+    this.filtry = [
         function(n) {
             if (_.uniq(n.split('')).length < 5) return " maloCyferek"
         },
@@ -84,7 +84,7 @@ enr = new function() {
         }
     ]
 
-    filtry.push(function(nr) {
+    this.filtry.push(function(nr) {
     	console.log(this.szukanyNr)
 
         if (RegExp(this.szukanyNr).test(nr)) return " szukanyNr "+nr
@@ -102,7 +102,7 @@ enr = new function() {
 
     	var r = "";
         _.each(nums, function(nr) {
-            _.each(filtry, function(it) {
+            _.each(this.filtry, function(it) {
                 if (!_.contains(obsluzoneNumery, nr)&&it(nr)) {
                 	r += (nr+" "+it(nr)+"\n")
                 	obsluzoneNumery.push(nr);
