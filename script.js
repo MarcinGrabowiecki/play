@@ -6,8 +6,6 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 enr = new function() {
 
-	console.log("wykonanie")
-
     this.interval = 1000;
     this.stop = false;
     this.numery = [];
@@ -99,9 +97,6 @@ enr = new function() {
     var obsluzoneNumery = []
 
     function ciekawe(nums) {
-
-    	console.log(filtry)
-
     	var r = "";
         _.each(nums, function(nr) {
             _.each(this.filtry, function(it) {
