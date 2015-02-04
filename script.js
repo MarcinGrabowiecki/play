@@ -23,7 +23,7 @@ enr = new function() {
 
         if (!this.stop && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
-            //setTimeout(this.run, this.interval)
+            setTimeout(enr.run, this.interval)
         }
 
     }
