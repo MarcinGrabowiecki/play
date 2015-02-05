@@ -98,9 +98,12 @@ enr = new function() {
         console.log(this.numery.join("\n"));
     }
 
-
+	var filtry6 = [];
+	var obsluzoneNumery3 = [];
     var obsluzoneNumery = [];
+    var obsluzoneNumery1 = [];
     var filtry5 = [];
+    var obsluzoneNumery2 = [];
 
     function ciekawe(nums) {
     	var r = "";
