@@ -6,6 +6,8 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 
 enr = new function() {
 
+	var _this=this;
+
     this.interval = 1000;
     this.stop = false;
     this.numery = [];
@@ -17,13 +19,13 @@ enr = new function() {
             return $(e).attr("for").substring(2)
         })
 
-        var nowe = _.difference(nums, this.numery);
+        var nowe = _.difference(nums, _this.numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
-        this.numery = _.uniq(this.numery.concat(nums)).sort()
+        _this.numery = _.uniq(_this.numery.concat(nums)).sort()
 
-        if (!this.stop && !ciekawe(nums)) {
+        if (!_this.stop && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
-            setTimeout(enr.run, this.interval)
+            setTimeout(enr.run, _this.interval)
         }
 
     }
