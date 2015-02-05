@@ -7,6 +7,7 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 enr = new function() {
 
 	var _this=this;
+	var ppp="xxx";
 
     this.interval = 1000;
     this.stop = false;
