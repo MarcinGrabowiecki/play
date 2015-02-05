@@ -8,6 +8,7 @@ enr = new function() {
 
 	var _this=this;
 	var ppp="xxx";
+	var imp=[];
 
     this.interval = 1000;
     this.stop = false;
