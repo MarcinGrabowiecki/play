@@ -24,7 +24,7 @@ enr = new function() {
         _this.numery = _.uniq(_this.numery.concat(nums)).sort()
 
         if (!_this.stop && !ciekawe(nums)) {
-            $("a.linkPointer > span:contains(Losuj)").trigger("click").trigger("click")
+            $("a.linkPointer > span:contains(Losuj)").trigger("click")
             setTimeout(enr.run, _this.interval)
         }
 
