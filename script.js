@@ -35,6 +35,9 @@ enr = new function() {
     //if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
     //})
 
+	var filtry1 = []
+	var filtry2 = [function(){return "lala"}]
+
     var filtry = [
         function(n) {
             if (_.uniq(n.split('')).length < 5) return " maloCyferek"
