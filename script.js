@@ -99,7 +99,8 @@ enr = new function() {
     }
 
 
-    var obsluzoneNumery = []
+    var obsluzoneNumery = [];
+    var filtry5 = [];
 
     function ciekawe(nums) {
     	var r = "";
