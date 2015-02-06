@@ -7,7 +7,6 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 enr = new function() {
 
 	var _this=this;
-	var ppp="xxx";
 	var imp=[];
 
     this.interval = 1000;
@@ -16,9 +15,6 @@ enr = new function() {
     this.szukanyNr="aaaaaaaaa"
 
     this.run = function (){
-    	console.log(ppp);
-    	console.log(_this);
-    	console.log(filtry);
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
