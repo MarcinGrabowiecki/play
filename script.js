@@ -110,7 +110,7 @@ enr = new function() {
 
     	var r = "";
         _.each(nums, function(nr) {
-            _.each(_this.filtry, function(it) {
+            _.each(filtry, function(it) {
                 if (!_.contains(obsluzoneNumery, nr)&&it(nr)) {
                 	r += (nr+" "+it(nr)+"\n")
                 	obsluzoneNumery.push(nr);
