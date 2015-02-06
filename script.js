@@ -16,6 +16,8 @@ enr = new function() {
     this.szukanyNr="aaaaaaaaa"
 
     this.run = function (){
+    	console.log(ppp);
+    	console.log(_this);
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
@@ -97,6 +99,7 @@ enr = new function() {
     }
 
     var obsluzoneNumery = [];
+    var dupa="xxxxxxxxx";
 
     function ciekawe(nums) {
     	var r = "";
