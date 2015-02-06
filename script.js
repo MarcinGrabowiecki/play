@@ -98,20 +98,14 @@ enr = new function() {
 
     function ciekawe(nums) {
         var r=(nums.filter(function(nr){return obsluzoneNumery.indexOf(nr)==-1}).map(function(nr){
-            f=filtry.map(function(f){return f(nr)}).filter(function(v){if(v==undefined) return false; obsluzoneNumery.push(nr); return true})
-            if(f.length>0) {return nr+" : "+f.join(",")}
-           	return "";
-        }).join(""))
-
-        console.log(r);
-        //console.log(obsluzoneNumery);
-
-        if (r.length > 1) {
-            alert(r);
+            var r=filtry.map(function(f){return f(nr)}).filter(function(v){return v!=undefined})
+            if(r.length>0) {obsluzoneNumery.push(nr);return nr+" : "+r};
+        })).filter(function(u){return u!=undefined})
+        if (r.length > 0) {
+            alert(r.join("\n"));
             return true;
         }
         return false;
-
     }
 
     setTimeout(this.run, 2000)
