@@ -37,7 +37,6 @@ enr = new function() {
     //if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
     //})
 
-	var filtry1 = []
 	var filtry2 = [function(){return "lala"}]
 
     var filtry = [
@@ -104,13 +103,12 @@ enr = new function() {
 	var obsluzoneNumery3 = [];
     var obsluzoneNumery = [];
     var obsluzoneNumery1 = [];
-    var filtry5 = [];
-    var obsluzoneNumery2 = [];
 
     function ciekawe(nums) {
+    	console.log(filtry)
     	var r = "";
         _.each(nums, function(nr) {
-            _.each(this.filtry, function(it) {
+            _.each(filtry, function(it) {
                 if (!_.contains(obsluzoneNumery, nr)&&it(nr)) {
                 	r += (nr+" "+it(nr)+"\n")
                 	obsluzoneNumery.push(nr);
