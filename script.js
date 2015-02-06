@@ -103,6 +103,11 @@ enr = new function() {
     var dupa="xxxxxxxxx";
 
     function ciekawe(nums) {
+
+    	console.log(ppp);
+    	console.log(_this);
+    	console.log(filtry);
+
     	var r = "";
         _.each(nums, function(nr) {
             _.each(_this.filtry, function(it) {
