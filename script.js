@@ -18,6 +18,7 @@ enr = new function() {
     this.run = function (){
     	console.log(ppp);
     	console.log(_this);
+    	console.log(filtry);
 
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
