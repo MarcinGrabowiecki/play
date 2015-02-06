@@ -98,8 +98,21 @@ enr = new function() {
 
     function ciekawe(nums) {
 
+        console.log(nums.filter(function(nr){return obsluzoneNumery.indexOf(nr)>-1}).map(function(nr){
+            return nr+":"+filtry.map(function(f){return f("00000000000000")}).filter(function(v){if(v==undefined) return false; obsluzoneNumery.push(nr); return true}).join(",")
+        }).join("\n"))
+
+
     	var r = "";
         _.each(nums, function(nr) {
+        	r+=filtry.map(
+        			function(f){
+        				return f(nr)
+        			}).filter(function(v){
+        				return (v!=undefined)
+        			}
+        		).join(",")
+            
             _.each(filtry, function(it) {
                 if (!_.contains(obsluzoneNumery, nr)&&it(nr)) {
                 	r += (nr+" "+it(nr)+"\n")
