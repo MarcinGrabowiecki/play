@@ -7,7 +7,6 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 enr = new function() {
 
 	var _this=this;
-	var imp=[];
 
     this.interval = 1000;
     this.stop = false;
@@ -29,6 +28,11 @@ enr = new function() {
             setTimeout(enr.run, _this.interval)
         }
 
+    }
+
+    this.resume = function (){
+    	_this.stop=false;
+    	_this.run();
     }
 
     //var everySecond = 0;
