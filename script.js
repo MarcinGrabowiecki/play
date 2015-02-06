@@ -7,14 +7,12 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 enr = new function() {
 
 	var _this=this;
-
     this.interval = 1000;
     this.stop = false;
     this.numery = [];
     this.szukanyNr="aaaaaaaaa"
 
     this.run = function (){
-
         var nums = $.map($("label.radio"), function(e) {
             return $(e).attr("for").substring(2)
         })
@@ -86,15 +84,13 @@ enr = new function() {
         },
         function(nr) {
        		if(nr.split("").sort().join("").indexOf("00000")==0) return "zawiera w sumie cztery zera";
-        }
+        },
+        function(nr) {
+        	if (RegExp(_this.szukanyNr).test(nr)) return " szukanyNr "+nr
+    	}
     ]
 
-    filtry.push(function(nr) {
-        if (RegExp(_this.szukanyNr).test(nr)) return " szukanyNr "+nr
-    })
-
     this.printNr = function() {
-        //_.each(numery,function(n){console.log(n)});
         console.log(this.numery.join("\n"));
     }
 
