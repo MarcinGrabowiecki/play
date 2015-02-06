@@ -87,9 +87,8 @@ enr = new function() {
     ]
 
     filtry.push(function(nr) {
-    	console.log(this.szukanyNr)
-
-        if (RegExp(this.szukanyNr).test(nr)) return " szukanyNr "+nr
+    	console.log(_this.szukanyNr)
+        if (RegExp(_this.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
 
     this.printNr = function() {
@@ -109,7 +108,6 @@ enr = new function() {
                 }
             })
         })
-
         if (r.length > 1) {
             alert(r);
             return true;
