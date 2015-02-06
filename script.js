@@ -44,7 +44,6 @@ enr = new function() {
         },
         function(nr) {
             if (_.uniq([nr.substring(0, 3), nr.substring(3, 6), nr.substring(6)]).length < 3) return " sekwencja"
-            return ""
         },
         function(nr) {
             for (i = 0; i < nr.length - 2; i++) {
@@ -66,8 +65,7 @@ enr = new function() {
             }
         },
         function(nr) {
-            var s="01234567890"
-            var t="09876543210"
+            var s="01234567890"; var t="09876543210";
             for(i=0; i<7; i++){
                 var reg1 = new RegExp(".*" + s.substring(i,i+5) + ".*");
                 var reg2 = new RegExp(".*" + t.substring(i,i+5) + ".*");
