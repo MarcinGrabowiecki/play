@@ -37,8 +37,6 @@ enr = new function() {
     //if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
     //})
 
-	var filtry2 = [function(){return "lala"}]
-
     var filtry = [
         function(n) {
             if (_.uniq(n.split('')).length < 5) return " maloCyferek"
@@ -99,16 +97,12 @@ enr = new function() {
         console.log(this.numery.join("\n"));
     }
 
-	var filtry6 = [];
-	var obsluzoneNumery3 = [];
     var obsluzoneNumery = [];
-    var obsluzoneNumery1 = [];
 
     function ciekawe(nums) {
-    	console.log(filtry)
     	var r = "";
         _.each(nums, function(nr) {
-            _.each(filtry, function(it) {
+            _.each(_this.filtry, function(it) {
                 if (!_.contains(obsluzoneNumery, nr)&&it(nr)) {
                 	r += (nr+" "+it(nr)+"\n")
                 	obsluzoneNumery.push(nr);
