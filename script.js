@@ -100,11 +100,9 @@ enr = new function() {
     }
 
     var obsluzoneNumery = [];
-    var dupa="xxxxxxxxx";
 
     function ciekawe(nums) {
 
-    	console.log(ppp);
     	console.log(_this);
     	console.log(filtry);
 
