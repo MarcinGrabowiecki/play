@@ -86,7 +86,6 @@ enr = new function() {
     ]
 
     filtry.push(function(nr) {
-    	console.log(_this.szukanyNr)
         if (RegExp(_this.szukanyNr).test(nr)) return " szukanyNr "+nr
     })
 
@@ -98,9 +97,6 @@ enr = new function() {
     var obsluzoneNumery = [];
 
     function ciekawe(nums) {
-
-    	console.log(_this);
-    	console.log(filtry);
 
     	var r = "";
         _.each(nums, function(nr) {
