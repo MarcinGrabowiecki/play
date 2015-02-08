@@ -27,7 +27,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     
   }).
   error(function(data, status, headers, config) {
-    $scope.status = status
+    $scope.status = status;
+    console.log(data, status, headers, config);
   });
 
 });
