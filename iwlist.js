@@ -9,23 +9,33 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
 
     $scope.load = function() {
         //$http.get('http://192.168.1.1/cgi-bin/iwlist').
+        $http.get('http://mjg.dnsd.info/cgi-bin/iwlist').
+        success(function(data, status, headers, config) {
+ 		$scope.status = "w"
+        //$http.get('http://192.168.1.1/cgi-bin/iwlist').
         $http.get('//mjg.dnsd.info/cgi-bin/iwlist').
         success(function(data, status, headers, config) {
             $scope.status = status;
-            var l = data.split("\n")
-            var ret = [];
-            var o = {};
-            for (i in l) {
-                if (/Cell.[0-9]{2,}/.test(l[i])) {
-                    ret.push(o);
-                    o = {}
+
+            
+            var r = data.split("\n").reduce(function(p,c,i){
+                console.log(c)
+                if(/Cell [0-9][0-9]/.test(c)){
+                    cell={idx:c,txt:"-"+c}
+                    p.push(cell)
+                } else {
+                    cell=p.slice(-1)[0]
+                    //console.log(c.split(':'))
+                    //console.log(cell)
                 }
-                o.txt = l[i]
-                o.id = i
 
-            }
-            $scope.linie = ret;
 
+                l={idx:i}
+                l.txt=c
+                //p.push(l);
+                return p;
+            },[{txt:'start'}])
+            $scope.linie = r;
         }).
         error(function(data, status, headers, config) {
             $scope.status = status;
