@@ -8,7 +8,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     $scope.linie = []
 
     $scope.load = function() {
-        $http.get('http://192.168.1.1/cgi-bin/iwlist').
+        //$http.get('http://192.168.1.1/cgi-bin/iwlist').
+        $http.get('//mjg.dnsd.info/cgi-bin/iwlist').
         success(function(data, status, headers, config) {
             $scope.status = status;
             var l = data.split("\n")
