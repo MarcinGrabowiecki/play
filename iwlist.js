@@ -21,7 +21,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
         $http.get(url).success(function(data, status, headers, config) {
             $scope.status = status;
             var r = data.split("\n").reduce(function(p,c,i){
-                console.log(c)
+                console.log(ltrim(c))
                 if(/Cell [0-9][0-9]/.test(c)){
                     cell={idx:c,txt:"-"+c}
                     p.push(cell)
