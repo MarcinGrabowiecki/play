@@ -7,9 +7,11 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     $scope.status = "bla"
     $scope.linie = []
 
+    //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
+    var url='http://192.168.1.1/cgi-bin/iwlist'
+
     $scope.load = function() {
-        //$http.get('http://192.168.1.1/cgi-bin/iwlist').
-        $http.get('http://mjg.dnsd.info/cgi-bin/iwlist').
+        $http.get(url).
         success(function(data, status, headers, config) {
  		$scope.status = "w"
         //$http.get('http://192.168.1.1/cgi-bin/iwlist').
