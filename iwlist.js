@@ -30,8 +30,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     p.push(cell)
                 } else {
                     var cell=p.slice(-1)[0]
-                    console.log(cell.indent)
-                    console.log(lsize(c))
+                    console.log(cell.indent+" - "+lsize(c))
+                    cell.indent=lsize(c);
                     //console.log(c.split(':'))
                     //console.log(cell)
                 }
