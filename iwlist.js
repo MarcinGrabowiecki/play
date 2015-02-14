@@ -11,15 +11,9 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     var url='http://192.168.1.1/cgi-bin/iwlist'
 
     $scope.load = function() {
-        $http.get(url).
-        success(function(data, status, headers, config) {
- 		$scope.status = "w"
-        //$http.get('http://192.168.1.1/cgi-bin/iwlist').
-        $http.get('//mjg.dnsd.info/cgi-bin/iwlist').
-        success(function(data, status, headers, config) {
+    	$scope.status = "w"
+        $http.get(url).success(function(data, status, headers, config) {
             $scope.status = status;
-
-            
             var r = data.split("\n").reduce(function(p,c,i){
                 console.log(c)
                 if(/Cell [0-9][0-9]/.test(c)){
