@@ -12,7 +12,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
 
     function ltrim(s){
     	//return x.replace(/^\s+|\s+$/gm,'');
-    	return x.replace(/^\s+/gm,'');
+    	return s.replace(/^\s+/gm,'');
     }
 
 
@@ -21,7 +21,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
         $http.get(url).success(function(data, status, headers, config) {
             $scope.status = status;
             var r = data.split("\n").reduce(function(p,c,i){
-                console.log(ltrim(c))
+                console.log(ltrim(c)+" : "+c.length-ltrim(c).length)
                 if(/Cell [0-9][0-9]/.test(c)){
                     cell={idx:c,txt:"-"+c}
                     p.push(cell)
