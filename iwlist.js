@@ -10,6 +10,12 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
     var url='http://192.168.1.1/cgi-bin/iwlist'
 
+    function ltrim(s){
+    	//return x.replace(/^\s+|\s+$/gm,'');
+    	return x.replace(/^\s+/gm,'');
+    }
+
+
     $scope.load = function() {
     	$scope.status = "w"
         $http.get(url).success(function(data, status, headers, config) {
