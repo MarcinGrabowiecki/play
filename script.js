@@ -106,6 +106,10 @@ enr = new function() {
         return false;
     }
 
+    this.testNr=function(nr){
+        console.log(ciekawe([nr]));
+    }
+
     setTimeout(this.run, 2000)
 
 }
