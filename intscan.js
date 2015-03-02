@@ -7,8 +7,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     $scope.status = "bla"
     $scope.linie = []
 
-    //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
-    var url='http://192.168.1.1/cgi-bin/intscan'
+    var url='http://mjg.dnsd.info/cgi-bin/intscan'
+    //var url='http://192.168.1.1/cgi-bin/intscan'
 
     function ltrim(s){
     	//return x.replace(/^\s+|\s+$/gm,'');
