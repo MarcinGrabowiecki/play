@@ -27,7 +27,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                 console.log(c);
                 return p;
             },[{txt:'start'}])
-            cosole.log(p);
+            console.log(r)
             $scope.linie = r;
         }).
         error(function(data, status, headers, config) {
