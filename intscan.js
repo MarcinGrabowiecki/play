@@ -24,10 +24,10 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
         $http.get(url).success(function(data, status, headers, config) {
             $scope.status = status;
             var r = data.split("\n").reduce(function(p,c,i){
-                re=/Link.Quality=([0-9][0-9]).([0-9][0-9]).*Signal level=(...)/
+                re=/Link.Quality=([0-9][0-9]).([0-9][0-9]).*Signal level=-(..)/
                 if(re.test(c)){
                     match=c.match(re)
-                    p.push({id:i,txt:c,val:match[0],max:match[1],dbi:-1*match[2]})
+                    p.push({id:i,txt:c,val:match[0],max:match[1],dbi:match[2]})
                 }
                 return p;
             },[{txt:'start'}])
