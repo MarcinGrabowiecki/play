@@ -25,20 +25,9 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
             $scope.status = status;
             var r = data.split("\n").reduce(function(p,c,i){
                 console.log(c);
-                if(/Cell [0-9][0-9]/.test(c)){
-                    var cell={idx:c,txt:"-"+c,indent:lsize(c)}
-                    p.push(cell)
-                } else {
-                    var cell=p.slice(-1)[0]
-                    console.log(cell.indent+" - "+lsize(c))
-                    cell.indent=lsize(c);
-                    //console.log(c.split(':'))
-                    //console.log(cell)
-                }
-                l={idx:i}
-                l.txt=c
                 return p;
             },[{txt:'start'}])
+            cosole.log(p);
             $scope.linie = r;
         }).
         error(function(data, status, headers, config) {
