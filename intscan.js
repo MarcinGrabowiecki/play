@@ -27,7 +27,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                 re=/Link.Quality=([0-9][0-9]).([0-9][0-9]).*Signal level=-(..)/
                 if(re.test(c)){
                     match=c.match(re)
-                    p.push({id:i,txt:c,val:match[0],max:match[1],dbi:match[2]})
+                    p.push({id:i,txt:c,val:match[1],max:match[2],dbi:match[3]})
                 }
                 return p;
             },[{txt:'start'}])
