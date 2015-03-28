@@ -7,7 +7,7 @@ document.getElementsByTagName("head")[0].appendChild(fileref)
 enr = new function() {
 
 	var _this=this;
-    this.interval = 1000;
+    this.interval = 100;
     this.stop = false;
     this.numery = [];
     this.szukanyNr="aaaaaaaaa"
@@ -35,9 +35,6 @@ enr = new function() {
     	_this.run();
     }
 
-
-
-    var everySecond = 0;
     $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
         $(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
         clearTimeout(delayed)
