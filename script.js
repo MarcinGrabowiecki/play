@@ -18,6 +18,8 @@ enr = new function() {
             return $(e).attr("for").substring(2)
         })
 
+        if(ciekawe(nums)) _this.stop=true;
+
         var nowe = _.difference(nums, _this.numery);
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
         _this.numery = _.uniq(_this.numery.concat(nums)).sort()
@@ -30,14 +32,12 @@ enr = new function() {
     }
 
 
-    console.log(nums)
 
     var everySecond = 0;
     $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
         $(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
         clearTimeout(delayed)
-        console.log(nums)
-        if (!_this.stop && !ciekawe(nums)) {
+        if (!_this.stop) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click")
             delayed=setTimeout(enr.run, _this.interval)
         }
