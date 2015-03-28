@@ -11,6 +11,7 @@ enr = new function() {
     this.stop = false;
     this.numery = [];
     this.szukanyNr="aaaaaaaaa"
+    var delayed=0
 
     this.run = function (){
         var nums = $.map($("label.radio"), function(e) {
@@ -21,11 +22,6 @@ enr = new function() {
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
         _this.numery = _.uniq(_this.numery.concat(nums)).sort()
 
-        if (!_this.stop && !ciekawe(nums)) {
-            $("a.linkPointer > span:contains(Losuj)").trigger("click")
-            setTimeout(enr.run, _this.interval)
-        }
-
     }
 
     this.resume = function (){
@@ -33,10 +29,16 @@ enr = new function() {
     	_this.run();
     }
 
+
+
     var everySecond = 0;
     $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
-        //if(everySecond++%2) setTimeout(function(){console.log(ev)},100);
-        $(ev.target).find('label').each(function(n,i){console.log($(i).attr("for"))})
+        $(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
+        clearTimeout(delayed)
+        if (!_this.stop && !ciekawe(nums)) {
+            $("a.linkPointer > span:contains(Losuj)").trigger("click")
+            delayed=setTimeout(enr.run, _this.interval)
+        }
     })
 
     var filtry = [
