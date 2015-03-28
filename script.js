@@ -24,6 +24,10 @@ enr = new function() {
         if (nowe.length > 0) console.log(new Date().toUTCString() + ":1: " + nowe.length + " nowe numery:" + nowe)
         _this.numery = _.uniq(_this.numery.concat(nums)).sort()
 
+        if (!_this.stop) {
+            $("a.linkPointer > span:contains(Losuj)").trigger("click")
+        }
+
     }
 
     this.resume = function (){
@@ -38,7 +42,6 @@ enr = new function() {
         $(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
         clearTimeout(delayed)
         if (!_this.stop) {
-            $("a.linkPointer > span:contains(Losuj)").trigger("click")
             delayed=setTimeout(enr.run, _this.interval)
         }
     })
