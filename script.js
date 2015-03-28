@@ -33,10 +33,10 @@ enr = new function() {
     	_this.run();
     }
 
-    //var everySecond = 0;
-    //$("#otherNumber0").bind('DOMSubtreeModified', function() {
-    //if(!numerStop&&everySecond++%2) setTimeout(procesuj,200);
-    //})
+    var everySecond = 0;
+    $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
+        if(everySecond++%2) setTimeout(function(){console.log(ev)},100);
+    })
 
     var filtry = [
         function(n) {
