@@ -30,11 +30,13 @@ enr = new function() {
     }
 
 
+    console.log(nums)
 
     var everySecond = 0;
     $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
         $(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
         clearTimeout(delayed)
+        console.log(nums)
         if (!_this.stop && !ciekawe(nums)) {
             $("a.linkPointer > span:contains(Losuj)").trigger("click")
             delayed=setTimeout(enr.run, _this.interval)
