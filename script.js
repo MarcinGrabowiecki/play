@@ -36,7 +36,7 @@ enr = new function() {
     }
 
     $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
-        $(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
+        //$(ev.target).find('label').map(function(i,n){console.log($(n).attr("for"))})
         clearTimeout(delayed)
         if (!_this.stop) {
             delayed=setTimeout(enr.run, _this.interval)
