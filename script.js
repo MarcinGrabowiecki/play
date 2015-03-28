@@ -35,7 +35,8 @@ enr = new function() {
 
     var everySecond = 0;
     $("#otherNumber0").bind('DOMSubtreeModified', function(ev) {
-        if(everySecond++%2) setTimeout(function(){console.log(ev)},100);
+        //if(everySecond++%2) setTimeout(function(){console.log(ev)},100);
+        $(ev.target).find('label').each(function(n,i){console.log($(i).attr("for"))})
     })
 
     var filtry = [
