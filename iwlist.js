@@ -34,7 +34,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     cell.indent=lsize(c);
                     //console.log(c.split(':'))
                     //console.log(cell)
-                    match=p.match("Cell (\\d{2}) - Address: (.*)")
+                    match=c.match("Cell (\\d{2}) - Address: (.*)")
                     cell.nr=match[1]
 					cell.adress=match[2]
 
