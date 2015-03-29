@@ -26,7 +26,7 @@
     status:{{status}}
 
     <ul>
-      <li ng-repeat="l in linie">{{l.essid}} , {{l.quality}} , {{l.signal}}</li>
+      <li ng-repeat="l in linie | orderBy:'quality'">{{l.essid}} , {{l.quality}} , {{l.signal}}</li>
     </ul>
 
     <div class="container">
