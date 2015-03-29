@@ -26,7 +26,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
             var r = data.split("\n").reduce(function(p,c,i){
                 console.log(c);
                 if(/Cell [0-9][0-9]/.test(c)){
-                    var cell={idx:c,txt:"-"+c,indent:lsize(c)}
+                	var match=c.match("Cell (\\d{2}) - Address: (.*)")
+                    var cell={idx:c,txt:"-"+c,indent:lsize(c),nr:match[1],address:match[2]}
                     p.push(cell)
                 } else {
                     var cell=p.slice(-1)[0]
@@ -34,10 +35,6 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     cell.indent=lsize(c);
                     //console.log(c.split(':'))
                     //console.log(cell)
-                    match=c.match("Cell (\\d{2}) - Address: (.*)")
-                    cell.nr=match[1]
-					cell.adress=match[2]
-
                     if(lsize(c)==20 && /Quality=/.test(c)){
                     	match=c.match('Quality=(\\d{2})/(\\d{2}).*Signal level=-(\\d{2})')
                     	cell.quality=parseInt(match[1])
