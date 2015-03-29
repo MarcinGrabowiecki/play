@@ -34,6 +34,10 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     cell.indent=lsize(c);
                     //console.log(c.split(':'))
                     //console.log(cell)
+
+                    if(lsize(c)==20 && /Quality=/.test(c)){
+                    	cell.quality=c
+                    }
                 }
                 l={idx:i}
                 l.txt=c
