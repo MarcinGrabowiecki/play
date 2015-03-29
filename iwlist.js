@@ -51,6 +51,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                 return p;
             },[{txt:'start'}])
 
+			re=r
+
             r.sort(function(a,b){return a.quality>b.quality})
             console.log(r)
 
