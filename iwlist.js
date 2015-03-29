@@ -46,6 +46,9 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                 l.txt=c
                 return p;
             },[{txt:'start'}])
+
+            r.sort(function(a,b){return a.quality>b.quality})
+
             $scope.linie = r;
         }).
         error(function(data, status, headers, config) {
