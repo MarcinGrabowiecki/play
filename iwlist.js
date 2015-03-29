@@ -36,7 +36,10 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     //console.log(cell)
 
                     if(lsize(c)==20 && /Quality=/.test(c)){
-                    	cell.quality=c
+                    	match=txt.match('Quality=(\\d{2})/(\\d{2}).*Signal level=-(\\d{2})')
+                    	cell.quality=match[1]
+                    	cell.qualityRange=match[2]
+                    	cell.signal=match[3]
                     }
                 }
                 l={idx:i}
