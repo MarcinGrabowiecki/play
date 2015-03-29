@@ -41,6 +41,10 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     	cell.qualityRange=match[2]
                     	cell.signal=match[3]
                     }
+
+                    if(/^ *ESSID:/.test(c)){
+                    	cell.essid=c.match('ESSID:"(.*)')[1]
+                    }
                 }
                 l={idx:i}
                 l.txt=c
