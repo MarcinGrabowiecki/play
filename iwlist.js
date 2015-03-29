@@ -34,6 +34,9 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     cell.indent=lsize(c);
                     //console.log(c.split(':'))
                     //console.log(cell)
+                    match=p.match("Cell (\\d{2}) - Address: (.*)")
+                    cell.nr=match[1]
+					cell.adress=match[2]
 
                     if(lsize(c)==20 && /Quality=/.test(c)){
                     	match=c.match('Quality=(\\d{2})/(\\d{2}).*Signal level=-(\\d{2})')
