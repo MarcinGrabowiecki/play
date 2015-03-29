@@ -1,5 +1,7 @@
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
 
+skany=[]
+
 expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $timeout) {
     $scope.active = true;
     $scope.active1 = true;
@@ -55,6 +57,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
             r=r.sort(function(a,b){return a.quality>b.quality})
             re=r
             $scope.linie = r;
+            skany[now]=r
             console.log($timeout($scope.load,3000))
         }).
         error(function(data, status, headers, config) {
