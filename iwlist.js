@@ -30,7 +30,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     p.push(cell)
                 } else {
                     var cell=p.slice(-1)[0]
-                    console.log(cell.indent+" - "+lsize(c))
+                    //console.log(cell.indent+" - "+lsize(c))
                     cell.indent=lsize(c);
                     //console.log(c.split(':'))
                     //console.log(cell)
@@ -43,7 +43,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
                     }
 
                     if(/^ *ESSID:/.test(c)){
-                    	cell.essid=c.match('ESSID:"(.*)')[1]
+                    	cell.essid=c.match('ESSID:"(.*)"')[1]
                     }
                 }
                 l={idx:i}
@@ -52,6 +52,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
             },[{txt:'start'}])
 
             r.sort(function(a,b){return a.quality>b.quality})
+            console.log(r)
 
             $scope.linie = r;
         }).
