@@ -1,6 +1,6 @@
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
 
-expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
+expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $timeout) {
     $scope.active = true;
     $scope.active1 = true;
 
@@ -23,11 +23,12 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http) {
     	$scope.status = "w"
         $http.get(url).success(function(data, status, headers, config) {
             $scope.status = status;
+            var now = new Date().getTime();
             var r = data.split("\n").reduce(function(p,c,i){
                 console.log(c);
                 if(/Cell [0-9][0-9]/.test(c)){
                 	var match=c.match("Cell (\\d{2}) - Address: (.*)")
-                    var cell={idx:c,txt:"-"+c,indent:lsize(c),nr:match[1],address:match[2]}
+                    var cell={idx:c,txt:"-"+c,indent:lsize(c),nr:match[1],address:match[2],time:now}
                     p.push(cell)
                 } else {
                     var cell=p.slice(-1)[0]
