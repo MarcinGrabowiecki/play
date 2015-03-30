@@ -1,6 +1,6 @@
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
 
-skany=[]
+skany={}
 
 expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $timeout) {
     $scope.active = true;
