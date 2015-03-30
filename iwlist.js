@@ -1,6 +1,6 @@
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
 
-skany={}
+skany=[]
 
 expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $timeout) {
     $scope.active = true;
@@ -25,7 +25,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
     	$scope.status = "w"
         $http.get(url).success(function(data, status, headers, config) {
             $scope.status = status;
-            var now = new Date().getTime();
+            var now = new Date().getTime()-1427743702624;
             var r = data.split("\n").reduce(function(p,c,i){
                 //console.log(c);
                 if(/Cell [0-9][0-9]/.test(c)){
