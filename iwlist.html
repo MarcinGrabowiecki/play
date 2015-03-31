@@ -11,6 +11,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
   <script src="iwlist.js"></script>
+  <script src="http://rawgit.com/nnnick/Chart.js/master/Chart.min.js"></script>
 
 </head>
 
@@ -63,6 +64,52 @@
 
     </div>
   </div>
+
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+<script>
+var data = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+    },
+    {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+    },
+    {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
+    },
+    {
+        value: 40,
+        color: "#949FB1",
+        highlight: "#A8B3C5",
+        label: "Grey"
+    },
+    {
+        value: 120,
+        color: "#4D5360",
+        highlight: "#616774",
+        label: "Dark Grey"
+    }
+
+];
+
+	var ctx = document.getElementById("myChart").getContext("2d");
+	// This will get the first returned node in the jQuery collection.
+	var myNewChart = new Chart(ctx);
+	myNewChart.PolarArea(data);
+</script>
+
 
 </body>
 

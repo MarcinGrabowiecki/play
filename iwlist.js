@@ -9,8 +9,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
     $scope.status = "bla"
     $scope.linie = []
 
-    var url='http://mjg.dnsd.info/cgi-bin/iwlist'
-    //var url='http://192.168.1.1/cgi-bin/iwlist'
+    //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
+    var url='http://192.168.1.1/cgi-bin/iwlist'
 
     function ltrim(s){
     	//return x.replace(/^\s+|\s+$/gm,'');
@@ -30,7 +30,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                 //console.log(c);
                 if(/Cell [0-9][0-9]/.test(c)){
                 	var match=c.match("Cell (\\d{2}) - Address: (.*)")
-                    var cell={idx:c,txt:"-"+c,indent:lsize(c),nr:match[1],address:match[2],time:now}
+                    var cell={idx:ltrim(c),indent:lsize(c),nr:match[1],address:match[2],time:now}
                     p.push(cell)
                 } else {
                     var cell=p.slice(-1)[0]
