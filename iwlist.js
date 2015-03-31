@@ -10,6 +10,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
     $scope.linie = []
 
     var url='http://mjg.dnsd.info/cgi-bin/iwlist'
+    
     //var url='http://192.168.1.1/cgi-bin/iwlist'
 
     function ltrim(s){
