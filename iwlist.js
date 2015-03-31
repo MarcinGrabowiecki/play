@@ -31,7 +31,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                 //console.log(c);
                 if(/Cell [0-9][0-9]/.test(c)){
                 	var match=c.match("Cell (\\d{2}) - Address: (.*)")
-                    var cell={idx:c,txt:"-"+c,indent:lsize(c),nr:match[1],address:match[2],time:now}
+                    var cell={idx:ltrim(c),indent:lsize(c),nr:match[1],address:match[2],time:now}
                     p.push(cell)
                 } else {
                     var cell=p.slice(-1)[0]
