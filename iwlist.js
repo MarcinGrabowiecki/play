@@ -93,7 +93,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
             re=r
             $scope.linie = r;
             skany[now]=r
-            console.log($timeout($scope.load,1000))
+            $timeout($scope.load,1000)
         }).
         error(function(data, status, headers, config) {
             $scope.status = status;
