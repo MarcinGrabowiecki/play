@@ -24,20 +24,13 @@ var data = {
     ]
 };
 
-window.onLoad=function(){
+window.onload=function(){
 	console.log("bla")
 	var ctx = document.getElementById("myChart").getContext("2d");
 	// This will get the first returned node in the jQuery collection.
 	var myNewChart = new Chart(ctx);
 	myNewChart.Line(data);
 }
-
-
-
-
-
-
-
 
 
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
@@ -51,8 +44,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
     $scope.status = "bla"
     $scope.linie = []
 
-    //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
-    var url='http://192.168.1.1/cgi-bin/iwlist'
+    var url='http://mjg.dnsd.info/cgi-bin/iwlist'
+    //var url='http://192.168.1.1/cgi-bin/iwlist'
 
     function ltrim(s){
     	//return x.replace(/^\s+|\s+$/gm,'');
