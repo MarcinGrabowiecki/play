@@ -24,6 +24,7 @@ var data = {
             data: [28, 48, 40, 19, 86, 27, 90]
         }
     ]
+	};
 
     if(window.re===undefined) return data;
 
@@ -31,10 +32,6 @@ var data = {
     var ads = re.map(function(v){return v.address});
     
     return data;
-
-};
-
-return data;
 
 }
 
