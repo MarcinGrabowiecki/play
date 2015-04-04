@@ -28,13 +28,12 @@ var data = {
 
     if(window.re===undefined) return data;
 
-    data.labels=window.re.map(function(v){return v.time});
+    //data.labels=window.re.map(function(v){return v.time});
     data.labels=Object.keys(skany)
-    var ads = re.map(function(v){return v.address});    
-	var out = re.map(function(v){console.log(v);if(v.essid=='FE:94:E3:32:0B:D5') return 100; return 0})
+    //var ads = re.map(function(v){return v.address});    
+	//var 	= re.map(function(v){console.log(v);if(v.essid=='FE:94:E3:32:0B:D5') return 100; return 0})
 	//
-	skany.map(function(v){})
-	data.datasets[0].data=out
+	data.datasets[0].data=skany.map(function(v){return v.reduce(function(a,b,c){console.log(a,b);if(a.address=="FE:94:E3:32:0B:D5")return a; return b}).quality});
 
     return data;
 }
