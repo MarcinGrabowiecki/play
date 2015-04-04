@@ -37,7 +37,7 @@ var data = {
 
 
 
-fillPlot(){
+function fillPlot(){
 	console.log("bla")
 	var ctx = document.getElementById("myChart").getContext("2d");
 	// This will get the first returned node in the jQuery collection.
