@@ -29,19 +29,23 @@ var data = {
     if(window.re===undefined) return data;
 
     data.labels=window.re.map(function(v){return v.time});
-    var ads = re.map(function(v){return v.address});
-    
+    var ads = re.map(function(v){return v.address});    
     return data;
 
 }
 
-window.onload=function(){
+
+
+
+fillPlot(){
 	console.log("bla")
 	var ctx = document.getElementById("myChart").getContext("2d");
 	// This will get the first returned node in the jQuery collection.
 	var myNewChart = new Chart(ctx);
 	myNewChart.Line(getData());
 }
+
+window.onload=fillPlot();
 
 
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
