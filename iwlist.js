@@ -44,8 +44,7 @@ var data = {
 					if(a.address==adres) return a;
 					return b;
 				}).quality
-
-				data.datasets={label:adres,data:quals}
+				data.datasets.push({label:adres,data:quals})
     	})
     })
 
