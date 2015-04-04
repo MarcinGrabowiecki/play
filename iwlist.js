@@ -33,13 +33,6 @@ window.onload=function(){
 }
 
 
-
-
-
-
-
-
-
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
 
 skany=[]
@@ -51,8 +44,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
     $scope.status = "bla"
     $scope.linie = []
 
-    //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
-    var url='http://192.168.1.1/cgi-bin/iwlist'
+    var url='http://mjg.dnsd.info/cgi-bin/iwlist'
+    //var url='http://192.168.1.1/cgi-bin/iwlist'
 
     function ltrim(s){
     	//return x.replace(/^\s+|\s+$/gm,'');
@@ -100,7 +93,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
             re=r
             $scope.linie = r;
             skany[now]=r
-            console.log($timeout($scope.load,1000))
+            $timeout($scope.load,1000)
         }).
         error(function(data, status, headers, config) {
             $scope.status = status;
