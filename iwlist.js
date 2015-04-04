@@ -1,3 +1,5 @@
+function getData(){
+
 var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -22,14 +24,23 @@ var data = {
             data: [28, 48, 40, 19, 86, 27, 90]
         }
     ]
+
+    data.labels=re.map(function(v){return v.time});
+    var ads = re.map(function(v){return v.address});
+    
+
 };
+
+return data;
+
+}
 
 window.onload=function(){
 	console.log("bla")
 	var ctx = document.getElementById("myChart").getContext("2d");
 	// This will get the first returned node in the jQuery collection.
 	var myNewChart = new Chart(ctx);
-	myNewChart.Line(data);
+	myNewChart.Line(getData());
 }
 
 
