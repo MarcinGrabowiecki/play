@@ -31,14 +31,10 @@ var data = {
     data.labels=window.re.map(function(v){return v.time});
     data.labels=Object.keys(skany)
     var ads = re.map(function(v){return v.address});    
-
 	var out = re.map(function(v){console.log(v);if(v.essid=='FE:94:E3:32:0B:D5') return 100; return 0})
-
 	//
-
 	skany.map(function(v){})
-	
-	data.datasets[0].data=[1,2,3,4,4,55,66,22,67,22,22,22,22,22,22,22,22]
+	data.datasets[0].data=out
 
     return data;
 }
@@ -115,8 +111,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
             r=r.sort(function(a,b){return a.quality>b.quality})
             re=r
             $scope.linie = r;
-            skany[now]=r
-            $timeout($scope.load,5000)
+            skany.push(r);
+            $timeout($scope.load,5000);
         }).
         error(function(data, status, headers, config) {
             $scope.status = status;
