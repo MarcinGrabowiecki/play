@@ -34,7 +34,9 @@ var data = {
 	//var 	= re.map(function(v){console.log(v);if(v.essid=='FE:94:E3:32:0B:D5') return 100; return 0})
 	//
 	data.datasets[0].data=skany.map(function(v){return v.reduce(function(a,b,c){console.log(a,b);if(a.address=="FE:94:E3:32:0B:D5")return a; return b}).quality});
-
+	var adresy={}
+	skany.map(function(v){v.map(function(c){adresy[c.address]="x"})})
+    console.log(adresy)
     return data;
 }
 
