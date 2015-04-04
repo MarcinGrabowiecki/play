@@ -45,7 +45,7 @@ function fillPlot(){
 	myNewChart.Line(getData());
 }
 
-window.onload=fillPlot();
+//window.onload=fillPlot();
 
 
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
