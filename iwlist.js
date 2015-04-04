@@ -39,16 +39,15 @@ var data = {
     
     Object.keys(adresy).map(function(adres){
     	//console.log(adres)
-    	skany.map(function(skan){
-				var quals=skan.reduce(function(a,b){
+    	var quals=skany.map(function(skan){
+				return skan.reduce(function(a,b){
 					if(a.address==adres) return a;
 					return b;
 				}).quality
-				data.datasets.push({label:adres,data:quals})
     	})
+    	console.log(adres,quals)
+    	//data.datasets.push({label:adres,data:quals})
     })
-
-
 
     return data;
 }
