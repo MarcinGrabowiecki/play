@@ -25,9 +25,12 @@ var data = {
         }
     ]
 
-    data.labels=re.map(function(v){return v.time});
+    if(window.re===undefined) return data;
+
+    data.labels=window.re.map(function(v){return v.time});
     var ads = re.map(function(v){return v.address});
     
+    return data;
 
 };
 
