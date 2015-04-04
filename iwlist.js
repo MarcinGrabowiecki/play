@@ -33,12 +33,12 @@ var data = {
     //var ads = re.map(function(v){return v.address});    
 	//var 	= re.map(function(v){console.log(v);if(v.essid=='FE:94:E3:32:0B:D5') return 100; return 0})
 	//
-	data.datasets[0].data=skany.map(function(v){return v.reduce(function(a,b,c){console.log(a,b);if(a.address=="FE:94:E3:32:0B:D5")return a; return b}).quality});
+	//data.datasets[0].data=skany.map(function(v){return v.reduce(function(a,b,c){console.log(a,b);if(a.address=="FE:94:E3:32:0B:D5")return a; return b}).quality});
 	var adresy={}
 	skany.map(function(v){v.map(function(c){adresy[c.address]="x"})})
     
     Object.keys(adresy).map(function(adres){
-    	console.log(adres)
+    	//console.log(adres)
     	skany.map(function(skan){
 				var quals=skan.reduce(function(a,b){
 					if(a.address==adres) return a;
