@@ -46,7 +46,7 @@ var data = {
 				}).quality
     	})
     	console.log(adres,quals)
-    	//data.datasets.push({label:adres,data:quals})
+    	data.datasets.push({label:adres,data:quals})
     })
 
     return data;
