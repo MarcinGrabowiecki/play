@@ -30,7 +30,7 @@ var data = {
     ]
 	};
 
-	data={};
+	data={datasets:[]};
 
     if(window.re===undefined) return data;
 
