@@ -39,7 +39,7 @@ var data = {
 	//
 	//data.datasets[0].data=skany.map(function(v){return v.reduce(function(a,b,c){console.log(a,b);if(a.address=="FE:94:E3:32:0B:D5")return a; return b}).quality});
 	var adresy={}
-	skany.map(function(v){v.map(function(c){adresy[c.address]="x"})})
+	skany.map(function(v){v.map(function(c){adresy[c.address]=c.essid})})
     
     Object.keys(adresy).map(function(adres){
     	
@@ -54,11 +54,13 @@ var data = {
     	
     	data.datasets.push(addColor(
     		{
-    			label:"wifi:"+adres,
+    			label:"wifi:"+adres+" "+adresy[adres],
     			data:quals
     		})
     	)
     })
+
+    console.log(data);
 
     return data;
 }
