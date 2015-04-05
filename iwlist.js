@@ -1,19 +1,24 @@
 function getData(){
 
 var colorIndex=0;
-var colors = ['rgba(166,206,227,0.3)','rgba(31,120,180,0.3)','rgba(178,223,138,0.3)','rgba(51,160,44,0.3)','rgba(251,154,153,0.3)','rgba(227,26,28,0.3)','rgba(253,191,111,0.3)','rgba(255,127,0,0.3)','rgba(202,178,214,0.3)','rgba(106,61,154,0.3)','rgba(255,255,153,0.3)','rgba(177,89,40,0.3)'];
+function addColor(o){
+	var colors = ['166,206,227','31,120,180','178,223,138','51,160,44','251,154,153','227,26,28','253,191,111','255,127,0','202,178,214','106,61,154','255,255,153','177,89,40'];
+	o.fillColor:'rgba('+colors[colorIndex%11]+',0.25)'
+	colorIndex++
+}
+
 
 var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
         {
             label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
+            fillColor: "220,220,220,0.2)",
+            strokeColor: "220,220,220,1)",
+            pointColor: "220,220,220,1)",
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
+            pointHighlightStroke: "220,220,220,1)",
             data: [10,20,30]
         }
     ]
@@ -41,12 +46,12 @@ var data = {
     	
     	console.log(adres,quals)
     	
-    	data.datasets.push(
+    	data.datasets.push(addColor(
     		{
     			label:"wifi:"+adres,
-    			data:quals,
-    			fillColor:colors[colorIndex++%11]
+    			data:quals
     		})
+    	)
     })
 
     return data;
