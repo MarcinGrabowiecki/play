@@ -30,6 +30,8 @@ var data = {
     ]
 	};
 
+	data={};
+
     if(window.re===undefined) return data;
 
     //data.labels=window.re.map(function(v){return v.time});
@@ -50,7 +52,7 @@ var data = {
 				}).quality
     	})
     	
-    	console.log(adres,quals)
+//    	console.log(adres,quals)
     	
     	data.datasets.push(addColor(
     		{
@@ -61,27 +63,22 @@ var data = {
     })
 
     console.log(data);
-
     return data;
 }
 
 
 
 function fillPlot(){
-
-Chart.defaults.global = {
-    animation: false
-}
-
-
-	
-	var ctx = document.getElementById("myChart").getContext("2d");
-	// This will get the first returned node in the jQuery collection.
-	var myNewChart = new Chart(ctx);
 	myNewChart.Line(getData());
 }
 
-//window.onload=fillPlot();
+var myNewChart;
+
+window.onload = function (){
+	Chart.defaults.global.animation = false;
+	var ctx = document.getElementById("myChart").getContext("2d");
+	myNewChart = new Chart(ctx);
+}
 
 
 var expandCollapseApp = angular.module('expandCollapseApp', ['ngAnimate']);
