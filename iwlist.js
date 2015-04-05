@@ -6,6 +6,7 @@ function addColor(o){
 	o.fillColor='rgba('+colors[colorIndex%11]+',0.25)'
 	o.strokeColor='rgb('+colors[colorIndex%11]+')'
 	colorIndex++
+	return o;
 }
 
 
