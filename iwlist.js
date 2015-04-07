@@ -131,6 +131,20 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                     if(/^ *ESSID:/.test(c)){
                     	cell.essid=c.match('ESSID:"(.*)"')[1]
                     }
+
+                    if(/^ *Extra: Last beacon:.*ms ago/.test(c)){
+                    	cell.beacon=c.match('Extra: Last beacon: (\\d*)ms ago')[1]
+                    }
+
+                    if(/^ *Encryption key:/.test(c)){
+                    	cell.encryptionKey=c.match('Encryption key:(.*)')[1]
+                    }
+
+                    if(/^ *Frequency:.* GHz .Channel/.test(c)){
+                    	//cell.frequency=c.match('Encryption key:(.*)')[1]
+                    	//cell.channel=c.match('Encryption key:(.*)')[1]
+                    }
+
                 }
                 l={idx:i}
                 l.txt=c
