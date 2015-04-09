@@ -149,11 +149,11 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                     if(/^ *Bit Rates:/.test(c)){
                     	cell.bitRates=c;
                     	console.log(p,c)
-                    	cell.bitRates.next=1;
+                    	cell.bitRatesNext=1;
                     }
-                    if(cell.bitRates.next==1){
+                    if(cell.bitRatesNext==1){
                     	cell.bitRates+=c;
-                    	cell.bitRates.next=2;
+                    	cell.bitRatesNext=2;
                     }
 
                 }
