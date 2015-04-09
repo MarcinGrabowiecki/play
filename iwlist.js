@@ -142,8 +142,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
 
                     if(/^ *Frequency:.* GHz .Channel/.test(c)){
                     	var m="Frequency:2.(\\d*) GHz .Channel (\\d*)."
-                    	cell.frequency=c.match(m[1])
-                    	cell.channel=c.match(m[2])
+                    	cell.frequency=c.match(m)[1]
+                    	cell.channel=c.match(m)[2]
                     }
 
                 }
