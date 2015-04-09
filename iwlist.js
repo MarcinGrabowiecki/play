@@ -110,7 +110,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
             $scope.status = status;
             var now = new Date().getTime()-1427743702624;
             var r = data.split("\n").reduce(function(p,c,i){
-                //console.log(c);
+                console.log(c);
                 if(/Cell [0-9][0-9]/.test(c)){
                 	var match=c.match("Cell (\\d{2}) - Address: (.*)")
                     var cell={idx:ltrim(c),indent:lsize(c),nr:match[1],address:match[2],time:now}
