@@ -146,6 +146,11 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                     	cell.channel=c.match(m)[2]
                     }
 
+                    if(/^ *Bit Rates:/.test(c)){
+                    	cell.bitRates=c;
+                    	console.log(p,c)
+                    }
+
                 }
                 l={idx:i}
                 l.txt=c
