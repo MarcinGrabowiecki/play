@@ -141,7 +141,7 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                     }
 
                     if(/^ *Frequency:.* GHz .Channel/.test(c)){
-                    	var m="Frequency:2.(\\d*) GHz .Channel (\\d*)."
+                    	var m="Frequency:(2.\\d*) GHz .Channel (\\d*)."
                     	cell.frequency=c.match(m)[1]
                     	cell.channel=c.match(m)[2]
                     }
@@ -149,17 +149,20 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
                     if(cell.bitRatesNext==2){
                     	cell.bitRates+=c;
                     	delete cell.bitRatesNext;
+                    	return;
                     }
 
                     if(cell.bitRatesNext==1){
                     	cell.bitRates+=c;
                     	cell.bitRatesNext=2;
+                    	return;
                     }
 
                     if(/^ *Bit Rates:/.test(c)){
                     	cell.bitRates=c;
                     	console.log(p,c)
                     	cell.bitRatesNext=1;
+                    	return;
                     }
 
 
