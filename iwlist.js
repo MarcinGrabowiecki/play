@@ -21,8 +21,7 @@ var data = {
             label: "My First dataset",
             fillColor: "220,220,220,0.2)",
             strokeColor: "220,220,220,1)",
-            pointColor: "220,220,220,1)",
-            pointStrokeColor: "#fff",
+            pointColor: "220,220,220,1)",pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "220,220,220,1)",
             data: [10,20,30]
@@ -92,8 +91,8 @@ expandCollapseApp.controller('expandCollapseCtrl', function($scope, $http, $time
     $scope.status = "bla"
     $scope.linie = []
 
-    //var url='http://mjg.dnsd.info/cgi-bin/iwlist'
-    var url='http://192.168.1.1/cgi-bin/iwlist'
+    var url='http://mjg.dnsd.info/cgi-bin/iwlist'
+    //var url='http://192.168.1.1/cgi-bin/iwlist'
 
     function ltrim(s){
     	//return x.replace(/^\s+|\s+$/gm,'');
