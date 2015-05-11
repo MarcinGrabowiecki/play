@@ -45,7 +45,7 @@ enr = new function() {
 
     var filtry = [
         function(n) {
-            if (_.uniq(n.split('')).length < 5) return " maloCyferek"
+            if (_.uniq(n.split('')).length < 4) return " maloCyferek"
         },
         function(nr) {
             if (_.uniq([nr.substring(0, 3), nr.substring(3, 6), nr.substring(6)]).length < 3) return " sekwencja"
