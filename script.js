@@ -90,6 +90,9 @@ enr = new function() {
         },
         function(nr) {
         	if (RegExp(_this.szukanyNr).test(nr)) return " szukanyNr "+nr
+    	},
+    	function(nr) {
+    		if(nr.substring(0,4)==nr.substring(5).split("").reverse().join("")) return "symetria "+nr;
     	}
     ]
 
